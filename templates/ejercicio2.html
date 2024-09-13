@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ejercicio 2 | Evaluación 3</title>
+  <link rel="stylesheet" type="text/css" href="/static/css/ejercicio2.css">
+  <link rel="icon" href="/static/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+  <main>
+    <div class="container">
+      <form action="/ejercicio2" method="POST">
+        <label for="nombre1">Nombre 1:</label>
+        <input type="text" id="nombre1" name="nombre1" required value="{{ formulario[0] }}">
+        <label for="nombre2">Nombre 2:</label>
+        <input type="text" id="nombre2" name="nombre2" required value="{{ formulario[1] }}">
+        <label for="nombre3">Nombre 3:</label>
+        <input type="text" id="nombre3" name="nombre3" required value="{{ formulario[2] }}">
+        <button type="submit">Enviar</button>
+      </form>
+      {% if resultado_nombre %}
+      <div class="respuesta">
+        El nombre con mayor cantidad de carácteres es : {{ resultado_nombre }}
+      </div>
+      {% endif %}
+
+      {% if resultado_largo %}
+      <div class="respuesta">
+        El nombre tiene : {{ resultado_largo }} carácteres
+      </div>
+      {% endif %}
+
+    </div>
+  </main>
+</body>
+
+</html>
